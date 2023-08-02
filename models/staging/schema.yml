@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: tracks
+    description: "La table tracks"
+    columns:
+      - name: TrackId
+        tests:
+          - unique
+          - not_null
+      - name: AlbumId
+        tests:
+          - not_null
+      - name: MediaTypeId
+        tests:
+          - not_null
+      - name: GenreId
+        tests:
+          - not_null
+
+
+sources:
+  - name: staging
+    database: mabase
+    schema: public 
+    tables:
+      - name: tracks
+      - name: artists
+      - name: albums
+      - name: invoices
+      - name: invoice_items
+      - name: customers
+      - name: employees
+      - name: genres
+      - name: media_types
+      - name: playlist_track
+      - name: playlists
+
